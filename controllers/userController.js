@@ -7,11 +7,10 @@ exports.getUsers = async (req, res) => {
 };
 
 exports.createUser = async (req, res) => {
-  const user = new User({
+  const user = await new User({
     email: req.body.email,
     username: req.body.username,
     password: req.body.password
-  });
-  await user.save();
+  }).save();
   res.send(user);
 };
