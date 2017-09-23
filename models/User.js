@@ -9,26 +9,15 @@ const userScehma = new Schema({
     trim: true,
     required: 'Email is required'
   },
-  name: {
+  username: {
     type: String,
     required: 'Name is required',
+    unique: true,
     trim: true
   },
-  location: {
-    type: {
-      type: String,
-      default: 'Point'
-    },
-    coordinates: [
-      {
-        type: Number,
-        required: 'Coordinates are required!'
-      }
-    ],
-    address: {
-      type: String,
-      required: 'Author is required'
-    }
+  password: {
+    type: String,
+    required: true
   }
 });
 

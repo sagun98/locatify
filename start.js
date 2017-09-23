@@ -6,6 +6,8 @@ mongoose.connection.on('error', err => console.error(err.message));
 
 // import models here!
 require('./models/User');
+require('./models/Channel');
+require('./models/Message');
 
 const app = require('./app');
 app.set('port', process.env.PORT || 3002);
